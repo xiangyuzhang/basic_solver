@@ -1,0 +1,4 @@
+EXEC      = SOFT
+DEPDIR    = mtl utils simp solver core
+MROOT     = /home/parallels/Desktop/basic_solver/
+include $(MROOT)/mtl/template.mk

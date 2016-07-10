@@ -18,9 +18,9 @@ DCOBJS     = $(addsuffix d,  $(COBJS))
 RCOBJS     = $(addsuffix r,  $(COBJS))
 
 
-CXX       ?= g++
-CFLAGS    ?= -Wall -Wno-parentheses
-LFLAGS    ?= -Wall
+CXX       ?= g++ 
+CFLAGS    ?= -Wall -Wno-parentheses -std=c++11 
+LFLAGS    ?= -Wall 
 
 COPTIMIZE ?= -O3
 
@@ -41,14 +41,14 @@ libd:	lib$(LIB)_debug.a
 libr:	lib$(LIB)_release.a
 
 ## Compile options
-%.o:			CFLAGS +=$(COPTIMIZE) -g -D DEBUG
+%.o:			CFLAGS +=$(COPTIMIZE) -g -D DEBUG 
 %.op:			CFLAGS +=$(COPTIMIZE) -pg -g -D NDEBUG
 %.od:			CFLAGS +=-O0 -g -D DEBUG
 %.or:			CFLAGS +=$(COPTIMIZE) -g -D NDEBUG
 
 ## Link options
 $(EXEC):		LFLAGS += -g
-$(EXEC)_profile:	LFLAGS += -g -pg
+$(EXEC)_profile:	LFLAGS += -g 
 $(EXEC)_debug:		LFLAGS += -g
 #$(EXEC)_release:	LFLAGS += ...
 $(EXEC)_static:		LFLAGS += --static
@@ -105,3 +105,4 @@ depend.mk: $(CSRCS) $(CHDRS)
 
 -include $(MROOT)/mtl/config.mk
 -include depend.mk
+

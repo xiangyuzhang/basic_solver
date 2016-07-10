@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+//#include "solver/Basic_solver.h"
+//#include "CNF/CNF_handler.h"
+//#include "Parser/netlist_parser.h"
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+	cerr << "============ Start Project ===========" << endl;
+/*
+	string netlist = argv[1];
+	string assignment = argv[2];
+	Basic_solver *solver = new Basic_solver(netlist, assignment);
+	solver->parse();
+	solver->assign();
+	solver->solve();
+	solver->printSolution(cout);
+*/
+	return 0;
+}

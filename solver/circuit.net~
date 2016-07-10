@@ -1,0 +1,6 @@
+input N1, N2
+output OUT
+wire inv_out
+
+inv1 gate1( .a(N1), .O(inv_out));
+and2 gate2( .a(N2), .b(inv_out), .O(OUT));

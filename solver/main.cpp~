@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+	string netlist = argv[1];
+	string assignment = argv[2];
+	Basic_solver *solver = new Basic_solver(netlist, assignment);
+	solver->parse();
+	solver->assign();
+	solver->solve();
+	solver->printSolution(cout);
+	return 0;
+}
